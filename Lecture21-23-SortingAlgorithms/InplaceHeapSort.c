@@ -14,20 +14,20 @@ int Heap[capacity + 1]; // Heap[0] is to store the size of heap
 void InnerTopToDown(int i){
     while(i <= Heap[0]){
         int now = Heap[i];
-        if(2*i <= Heap[0] && now < Heap[2 * i] && 2*i+1 <= Heap[0] && now < Heap[2*i+1])
-        {
-            if(Heap[2*i] < Heap[2*i+1]){
-                int temp = Heap[i];
-                Heap[i] = Heap[2*i+1];
-                Heap[2*i+1] = temp;
-                i = 2 * i + 1;
-            }
-            else{
+        if(2*i <= Heap[0] && 2*i+1 <= Heap[0]){
+            if(now < Heap[2 * i] && Heap[2*i] > Heap[2*i+1]){
                 int temp = Heap[i];
                 Heap[i] = Heap[2*i];
                 Heap[2*i] = temp;
                 i = 2 * i;
             }
+            else if(now < Heap[2 * i + 1] && Heap[2*i] < Heap[2*i+1]){
+                int temp = Heap[i];
+                Heap[i] = Heap[2*i+1];
+                Heap[2*i+1] = temp;
+                i = 2 * i + 1;
+            }
+            else break;
         }
         else if(2*i <= Heap[0] && now < Heap[2 * i]){
             int temp = Heap[i];

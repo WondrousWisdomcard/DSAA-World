@@ -47,9 +47,9 @@ Implement an in-place sorting, making use of POP operation for the built complet
 
 #### Test2: 
 
-    Initial: HeapSize: 20    119 40 31 69 98 81 97 14 19 115 12 64 23 108 35 24 44 9 83 53
-    MaxHeap: HeapSize: 20    119 115 108 69 83 81 31 40 44 98 12 64 23 97 35 24 14 9 19 53
-    AfterHeapSort: HeapSize: 0    9 12 14 19 24 23 31 35 40 44 53 64 97 69 81 98 83 108 115 119
+    Initial: HeapSize: 20    100 101 5 109 76 29 77 1 12 42 2 19 18 105 46 51 23 70 20 68 
+    MaxHeap: HeapSize: 20    109 105 100 101 76 29 5 51 70 68 2 19 18 77 46 23 1 20 12 42 
+    AfterHeapSort: HeapSize: 0    1 2 5 12 18 19 20 23 29 42 46 51 77 68 70 76 100 101 105 109 
 
 可以看到排序后的数组是有序的，即排序成功，与此同时排序过程并没有申请大于等于n的辅助空间，排序的过程都在数组Heap里面进行，因此排序是Inplace的。
 
